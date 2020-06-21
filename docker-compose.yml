@@ -10,7 +10,5 @@ services:
       DROPBOX_GID: "1000"
     volumes:
     - /etc/timezone:/etc/timezone
-    - /etc/localtime:/etc/localtime
-    - /tmp:/opt/dropbox/Dropbox
     - /tmp:/opt/dropbox/.dropbox
     network_mode: host
