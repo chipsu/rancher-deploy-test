@@ -1,0 +1,16 @@
+version: '2'
+services:
+  dropbox:
+    image: nginx
+    labels:
+      io.rancher.scheduler.affinity:host_label: dropbox=true
+    environment:
+      ENABLE_DROPBOX_IGNORE: "false"
+      DROPBOX_UID: "1000"
+      DROPBOX_GID: "1000"
+    volumes:
+    - /etc/timezone:/etc/timezone
+    - /etc/localtime:/etc/localtime
+    - /tmp:/opt/dropbox/Dropbox
+    - /tmp:/opt/dropbox/.dropbox
+    network_mode: host
